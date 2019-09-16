@@ -5,6 +5,9 @@ const app = express();
 connectDB();
 const PORT = process.env.PORT || 5000; // on the server it takes from PORT, on dev it takes 5000
 
+//initialize middleware
+app.use(express.json({extended: false}));
+
 app.get('/', (req, res) => res.send('App running'));
 
 //routes
